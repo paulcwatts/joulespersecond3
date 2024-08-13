@@ -6,11 +6,11 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import imgRunning from '@/images/photos/running.jpg'
+import imgDog from '@/images/photos/archer.jpg'
+import imgLake from '@/images/photos/lake.jpg'
+import imgShuttle from '@/images/photos/shuttle.jpg'
+import imgDesk from '@/images/photos/desk.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import clsx from 'clsx'
@@ -209,7 +209,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[imgDesk, imgLake,  imgRunning, imgDog, imgShuttle].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -238,22 +238,28 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software designer, founder, and amateur astronaut.
+            Software developer, founder, endurance runner, dog lover.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Paul, a software developer and tech leader
+            from Washington State. I&apos;ve been building cloud-based web applications
+            and CI/CD infrastructures for over 10 years.
           </p>
           <div className="mt-6 flex gap-6">
+            {/*
             <SocialLink
-              href="#"
+              href="mailto:paulcwatts@gmail.com"
+              aria-label="Email me"
+              icon={MailIcon}
+            />
+            */}
+            <SocialLink
+              href="https://github.com/paulcwatts"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/paulcwatts/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
