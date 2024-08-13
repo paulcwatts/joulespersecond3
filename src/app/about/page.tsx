@@ -1,16 +1,10 @@
+import { Container } from '@/components/Container'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import portraitImage from '@/images/portrait.jpg'
+import clsx from 'clsx'
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
-
-import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  XIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({
   className,
@@ -103,12 +97,6 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
-              Follow on X
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
             <SocialLink href="#" icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
