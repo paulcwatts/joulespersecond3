@@ -4,13 +4,17 @@ import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, } from '@/components/SocialIcons'
 import logoAdvis from '@/images/logos/advis.svg'
 import logoAws from '@/images/logos/aws.svg'
+import logoDjango from '@/images/logos/django.svg'
 import logoJS from '@/images/logos/javascript.svg'
 import logoKubernetes from '@/images/logos/kubernetes.svg'
+import logoFastAPI from '@/images/logos/fastapi.png';
 import logoTS from '@/images/logos/typescript.svg'
 import logoNasdaq from '@/images/logos/nasdaq.svg'
+import logoPostgres from '@/images/logos/postgres.svg';
 import logoPython from '@/images/logos/python.svg'
 import logoTurbopatent from '@/images/logos/turbopatent.png'
 import logoUit from '@/images/logos/uit.jpg'
+import logoVue from '@/images/logos/vue.svg';
 import imgDog from '@/images/photos/archer.jpg'
 import imgDesk from '@/images/photos/desk.jpg'
 import imgLake from '@/images/photos/lake.jpg'
@@ -244,7 +248,7 @@ function Skill({ skill }: { skill: Skill }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={skill.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={skill.logo} alt="" className="h-6 w-6 object-scale-down" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Skill</dt>
@@ -278,15 +282,6 @@ function Skills() {
       },
     },
     {
-      skill: "AWS",
-      logo: logoAws,
-      start: "2009",
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
-    },
-    {
       skill: "JavaScript",
       logo: logoJS,
       start: "2009",
@@ -305,9 +300,51 @@ function Skills() {
       },
     },
     {
+      skill: "Django",
+      logo: logoDjango,
+      start: "2013",
+      end: "2021",
+    },
+    {
+      skill: "FastAPI",
+      logo: logoFastAPI,
+      start: "2021",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "VueJS",
+      logo: logoVue,
+      start: "2021",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "AWS",
+      logo: logoAws,
+      start: "2009",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
       skill: "Kubernetes",
       logo: logoKubernetes,
       start: "2020",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "PostgreSQL",
+      logo: logoPostgres,
+      start: "2015",
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
