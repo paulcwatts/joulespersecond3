@@ -1,49 +1,31 @@
+import { Card } from '@/components/Card'
+import { SimpleLayout } from '@/components/SimpleLayout'
+import logoAdvis from '@/images/logos/advis.svg'
+import logoNext from '@/images/logos/nextjs.svg'
+import logoOneBusAway from '@/images/logos/onebusaway.jpg'
 import { type Metadata } from 'next'
 import Image from 'next/image'
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    name: "Joulespersecond.com",
+    description: 'This site! Written in Next.js.',
+    link: { href: 'https://github.com/paulcwatts/joulespersecond3', label: 'github.com' },
+    logo: logoNext,
   },
   {
-    name: 'Animaginary',
+    name: 'Advis Network',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Data and analytics for Unit Investment Trusts. Written in FastAPI and VueJS.',
+    link: { href: 'https://advisnetwork.com/', label: 'advisnetwork.com' },
+    logo: logoAdvis,
   },
   {
-    name: 'HelioStream',
+    name: 'OneBusAway',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Open source public transit. Original developer for the Android app.',
+    link: { href: 'https://github.com/OneBusAway/onebusaway-android', label: 'github.com' },
+    logo: logoOneBusAway,
   },
 ]
 
@@ -60,14 +42,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'A short list of things I’ve made in my years of coding.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="A short list of things I’ve made in my years of coding."
+      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. I've also worked on many open source projects, and as much as I can try to give back to the community."
     >
       <ul
         role="list"
