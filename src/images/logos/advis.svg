@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="125" height="122" viewBox="0 0 125 122">
+  <defs>
+    <clipPath id="clip-Badge-Default">
+      <rect width="125" height="122"/>
+    </clipPath>
+  </defs>
+  <g id="Badge-Default" clip-path="url(#clip-Badge-Default)">
+    <g id="Group_109" data-name="Group 109" transform="translate(14.389 15.379)">
+      <path id="Path_3663" data-name="Path 3663" d="M16.666,38.283,32.4,84.368H54.909L26.033,8.226Z" transform="translate(3.893 7.34)" fill="#0ca1f0"/>
+      <path id="Path_3664" data-name="Path 3664" d="M19,0,54.6,91.708H80.181L44.221,0Z" transform="translate(16.955 0)" fill="#0ca1f0"/>
+      <path id="Path_3665" data-name="Path 3665" d="M35.958,0,0,91.708H24.031L61.176,0Z" transform="translate(0 0)" fill="#0e0bb7"/>
+      <path id="Path_3666" data-name="Path 3666" d="M49.694,8.226,18.9,84.368H43.3L71.487,8.226Z" transform="translate(16.865 7.34)" fill="#0e0bb7"/>
+    </g>
+  </g>
+</svg>

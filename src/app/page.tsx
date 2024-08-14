@@ -2,15 +2,20 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
-import imgRunning from '@/images/photos/running.jpg'
+import logoAdvis from '@/images/logos/advis.svg'
+import logoAws from '@/images/logos/aws.svg'
+import logoJS from '@/images/logos/javascript.svg'
+import logoKubernetes from '@/images/logos/kubernetes.svg'
+import logoTS from '@/images/logos/typescript.svg'
+import logoNasdaq from '@/images/logos/nasdaq.svg'
+import logoPython from '@/images/logos/python.svg'
+import logoTurbopatent from '@/images/logos/turbopatent.png'
+import logoUit from '@/images/logos/uit.jpg'
 import imgDog from '@/images/photos/archer.jpg'
-import imgLake from '@/images/photos/lake.jpg'
-import imgShuttle from '@/images/photos/shuttle.jpg'
 import imgDesk from '@/images/photos/desk.jpg'
+import imgLake from '@/images/photos/lake.jpg'
+import imgRunning from '@/images/photos/running.jpg'
+import imgShuttle from '@/images/photos/shuttle.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import clsx from 'clsx'
@@ -63,6 +68,23 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function LightbulbIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className="size-6"
+      {...props}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round"
+            d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+    </svg>
+  )
+}
+
 function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
@@ -76,7 +98,7 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function Article({ article }: { article: ArticleWithSlug }) {
+function Article({article}: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
@@ -152,35 +174,35 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Advis Network',
+      title: 'Co-Founder',
+      logo: logoAdvis,
+      start: '2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Nasdaq',
+      title: 'Lead Project Manager',
+      logo: logoNasdaq,
+      start: '2021',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'UIT Investing (Acquired by Nasdaq)',
+      title: 'Co-Founder and CTO',
+      logo: logoUit,
+      start: '2017',
+      end: '2019',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'TurboPatent',
+      title: 'CTO',
+      logo: logoTurbopatent,
+      start: '2013',
+      end: '2016',
     },
   ]
 
@@ -199,6 +221,111 @@ function Resume() {
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
+    </div>
+  )
+}
+
+interface Skill {
+  skill: string
+  logo: ImageProps['src']
+  start: string | { label: string; dateTime: string }
+  end: string | { label: string; dateTime: string }
+}
+
+function Skill({ skill }: { skill: Skill }) {
+  let startLabel =
+    typeof skill.start === 'string' ? skill.start : skill.start.label
+  let startDate =
+    typeof skill.start === 'string' ? skill.start : skill.start.dateTime
+
+  let endLabel = typeof skill.end === 'string' ? skill.end : skill.end.label
+  let endDate = typeof skill.end === 'string' ? skill.end : skill.end.dateTime
+
+  return (
+    <li className="flex gap-4">
+      <div className="relative mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+        <Image src={skill.logo} alt="" className="h-7 w-7" unoptimized />
+      </div>
+      <dl className="flex flex-auto flex-wrap gap-x-2">
+        <dt className="sr-only">Skill</dt>
+        <dd className="flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {skill.skill}
+        </dd>
+        <dt className="sr-only">Date</dt>
+        <dd
+          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+          aria-label={`${startLabel} until ${endLabel}`}
+        >
+          <time dateTime={startDate}>{startLabel}</time>
+          {' '}
+          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={endDate}>{endLabel}</time>
+        </dd>
+      </dl>
+    </li>
+  )
+}
+
+function Skills() {
+  let skills: Skill[] = [
+    {
+      skill: "Python",
+      logo: logoPython,
+      start: "1998",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "AWS",
+      logo: logoAws,
+      start: "2009",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "JavaScript",
+      logo: logoJS,
+      start: "2009",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "TypeScript",
+      logo: logoTS,
+      start: "2021",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      skill: "Kubernetes",
+      logo: logoKubernetes,
+      start: "2020",
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    }
+  ];
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <LightbulbIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Skills</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {skills.map((skill, skillIndex) => (
+          <Skill key={skillIndex} skill={skill} />
+      ))}
+      </ol>
     </div>
   )
 }
@@ -241,7 +368,7 @@ export default async function Home() {
             Software developer, founder, endurance runner, dog lover.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Paul, a software developer and tech leader
+            I’m Paul, a full-stack software developer and tech leader
             from Washington State. I&apos;ve been building cloud-based web applications
             and CI/CD infrastructures for over 10 years.
           </p>
@@ -276,6 +403,7 @@ export default async function Home() {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
+            <Skills />
           </div>
         </div>
       </Container>
