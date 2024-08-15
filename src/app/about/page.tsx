@@ -1,11 +1,11 @@
-import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
-import clsx from 'clsx'
-import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import Text from './text.mdx';
+import { Container } from "@/components/Container";
+import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
+import portraitImage from "@/images/portrait.jpg";
+import clsx from "clsx";
+import { type Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Text from "./text.mdx";
 
 function SocialLink({
   className,
@@ -13,13 +13,13 @@ function SocialLink({
   children,
   icon: Icon,
 }: {
-  className?: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-  children: React.ReactNode
+  className?: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  children: React.ReactNode;
 }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -28,10 +28,10 @@ function SocialLink({
         <span className="ml-4">{children}</span>
       </Link>
     </li>
-  )
+  );
 }
 
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MailIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -39,14 +39,14 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
       />
     </svg>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: "About",
   description:
     "I’m Paul, a software developer and fractional tech leader from Washington State.",
-}
+};
 
 export default function About() {
   return (
@@ -67,15 +67,23 @@ export default function About() {
             I’m Paul, a full-stack software developer from Washington State.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <Text/>
+            <Text />
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://github.com/paulcwatts" icon={GitHubIcon} className="mt-4">
+            <SocialLink
+              href="https://github.com/paulcwatts"
+              icon={GitHubIcon}
+              className="mt-4"
+            >
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/paulcwatts/" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/paulcwatts/"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
@@ -89,5 +97,5 @@ export default function About() {
         </div>
       </div>
     </Container>
-  )
+  );
 }

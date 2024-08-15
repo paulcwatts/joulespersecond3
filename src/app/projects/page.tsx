@@ -1,35 +1,41 @@
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAdvis from '@/images/logos/advis.svg'
-import logoNext from '@/images/logos/nextjs.svg'
-import logoOneBusAway from '@/images/logos/onebusaway.jpg'
-import { type Metadata } from 'next'
-import Image from 'next/image'
+import { Card } from "@/components/Card";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import logoAdvis from "@/images/logos/advis.svg";
+import logoNext from "@/images/logos/nextjs.svg";
+import logoOneBusAway from "@/images/logos/onebusaway.jpg";
+import { type Metadata } from "next";
+import Image from "next/image";
 
 const projects = [
   {
     name: "Joulespersecond.com",
-    description: 'This site! Written in Next.js.',
-    link: { href: 'https://github.com/paulcwatts/joulespersecond3', label: 'github.com' },
+    description: "This site! Written in Next.js.",
+    link: {
+      href: "https://github.com/paulcwatts/joulespersecond3",
+      label: "github.com",
+    },
     logo: logoNext,
   },
   {
-    name: 'Advis Network',
+    name: "Advis Network",
     description:
-      'Data and analytics for Unit Investment Trusts. Written in FastAPI and VueJS.',
-    link: { href: 'https://advisnetwork.com/', label: 'advisnetwork.com' },
+      "Data and analytics for Unit Investment Trusts. Written in FastAPI and VueJS.",
+    link: { href: "https://advisnetwork.com/", label: "advisnetwork.com" },
     logo: logoAdvis,
   },
   {
-    name: 'OneBusAway',
+    name: "OneBusAway",
     description:
-      'Open source public transit. Original developer for the Android app.',
-    link: { href: 'https://github.com/OneBusAway/onebusaway-android', label: 'github.com' },
+      "Open source public transit. Original developer for the Android app.",
+    link: {
+      href: "https://github.com/OneBusAway/onebusaway-android",
+      label: "github.com",
+    },
     logo: logoOneBusAway,
   },
-]
+];
 
-function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function LinkIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -37,13 +43,13 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'A short list of things I’ve made in my years of coding.',
-}
+  title: "Projects",
+  description: "A short list of things I’ve made in my years of coding.",
+};
 
 export default function Projects() {
   return (
@@ -77,5 +83,5 @@ export default function Projects() {
         ))}
       </ul>
     </SimpleLayout>
-  )
+  );
 }

@@ -1,32 +1,32 @@
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon, } from '@/components/SocialIcons'
-import logoAdvis from '@/images/logos/advis.svg'
-import logoAws from '@/images/logos/aws.svg'
-import logoDjango from '@/images/logos/django.svg'
-import logoJS from '@/images/logos/javascript.svg'
-import logoKubernetes from '@/images/logos/kubernetes.svg'
-import logoFastAPI from '@/images/logos/fastapi.png';
-import logoTS from '@/images/logos/typescript.svg'
-import logoNasdaq from '@/images/logos/nasdaq.svg'
-import logoPostgres from '@/images/logos/postgres.svg';
-import logoPython from '@/images/logos/python.svg'
-import logoTurbopatent from '@/images/logos/turbopatent.png'
-import logoUit from '@/images/logos/uit.jpg'
-import logoVue from '@/images/logos/vue.svg';
-import imgDog from '@/images/photos/archer.jpg'
-import imgDesk from '@/images/photos/desk.jpg'
-import imgLake from '@/images/photos/lake.jpg'
-import imgRunning from '@/images/photos/running.jpg'
-import imgShuttle from '@/images/photos/shuttle.jpg'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
-import clsx from 'clsx'
-import Image, { type ImageProps } from 'next/image'
-import Link from 'next/link'
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import { Container } from "@/components/Container";
+import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
+import logoAdvis from "@/images/logos/advis.svg";
+import logoAws from "@/images/logos/aws.svg";
+import logoDjango from "@/images/logos/django.svg";
+import logoJS from "@/images/logos/javascript.svg";
+import logoKubernetes from "@/images/logos/kubernetes.svg";
+import logoFastAPI from "@/images/logos/fastapi.png";
+import logoTS from "@/images/logos/typescript.svg";
+import logoNasdaq from "@/images/logos/nasdaq.svg";
+import logoPostgres from "@/images/logos/postgres.svg";
+import logoPython from "@/images/logos/python.svg";
+import logoTurbopatent from "@/images/logos/turbopatent.png";
+import logoUit from "@/images/logos/uit.jpg";
+import logoVue from "@/images/logos/vue.svg";
+import imgDog from "@/images/photos/archer.jpg";
+import imgDesk from "@/images/photos/desk.jpg";
+import imgLake from "@/images/photos/lake.jpg";
+import imgRunning from "@/images/photos/running.jpg";
+import imgShuttle from "@/images/photos/shuttle.jpg";
+import { type ArticleWithSlug, getAllArticles } from "@/lib/articles";
+import { formatDate } from "@/lib/formatDate";
+import clsx from "clsx";
+import Image, { type ImageProps } from "next/image";
+import Link from "next/link";
 
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MailIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -46,10 +46,10 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
-function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function BriefcaseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -69,10 +69,10 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
-function LightbulbIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function LightbulbIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -83,13 +83,16 @@ function LightbulbIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
       className="size-6"
       {...props}
     >
-      <path strokeLinecap="round" strokeLinejoin="round"
-            d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+      />
     </svg>
-  )
+  );
 }
 
-function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ArrowDownIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -99,10 +102,10 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
-function Article({article}: { article: ArticleWithSlug }) {
+function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
@@ -114,38 +117,38 @@ function Article({article}: { article: ArticleWithSlug }) {
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
-  )
+  );
 }
 
 function SocialLink({
   icon: Icon,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>
+  icon: React.ComponentType<{ className?: string }>;
 }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
-  )
+  );
 }
 
 interface Role {
-  company: string
-  title: string
-  logo: ImageProps['src']
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
+  company: string;
+  title: string;
+  logo: ImageProps["src"];
+  start: string | { label: string; dateTime: string };
+  end: string | { label: string; dateTime: string };
 }
 
 function Role({ role }: { role: Role }) {
   let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
+    typeof role.start === "string" ? role.start : role.start.label;
   let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
+    typeof role.start === "string" ? role.start : role.start.dateTime;
 
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+  let endLabel = typeof role.end === "string" ? role.end : role.end.label;
+  let endDate = typeof role.end === "string" ? role.end : role.end.dateTime;
 
   return (
     <li className="flex gap-4">
@@ -166,49 +169,49 @@ function Role({ role }: { role: Role }) {
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
           aria-label={`${startLabel} until ${endLabel}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={startDate}>{startLabel}</time>{" "}
+          <span aria-hidden="true">—</span>{" "}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
     </li>
-  )
+  );
 }
 
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Advis Network',
-      title: 'Co-Founder',
+      company: "Advis Network",
+      title: "Co-Founder",
       logo: logoAdvis,
-      start: '2022',
+      start: "2022",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Nasdaq',
-      title: 'Lead Project Manager',
+      company: "Nasdaq",
+      title: "Lead Project Manager",
       logo: logoNasdaq,
-      start: '2021',
-      end: '2019',
+      start: "2021",
+      end: "2019",
     },
     {
-      company: 'UIT Investing (Acquired by Nasdaq)',
-      title: 'Co-Founder and CTO',
+      company: "UIT Investing (Acquired by Nasdaq)",
+      title: "Co-Founder and CTO",
       logo: logoUit,
-      start: '2017',
-      end: '2019',
+      start: "2017",
+      end: "2019",
     },
     {
-      company: 'TurboPatent',
-      title: 'CTO',
+      company: "TurboPatent",
+      title: "CTO",
       logo: logoTurbopatent,
-      start: '2013',
-      end: '2016',
+      start: "2013",
+      end: "2016",
     },
-  ]
+  ];
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
@@ -221,34 +224,43 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="/resume.pdf" variant="secondary" className="group mt-6 w-full">
+      <Button
+        href="/resume.pdf"
+        variant="secondary"
+        className="group mt-6 w-full"
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
-  )
+  );
 }
 
 interface Skill {
-  skill: string
-  logo: ImageProps['src']
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
+  skill: string;
+  logo: ImageProps["src"];
+  start: string | { label: string; dateTime: string };
+  end: string | { label: string; dateTime: string };
 }
 
 function Skill({ skill }: { skill: Skill }) {
   let startLabel =
-    typeof skill.start === 'string' ? skill.start : skill.start.label
+    typeof skill.start === "string" ? skill.start : skill.start.label;
   let startDate =
-    typeof skill.start === 'string' ? skill.start : skill.start.dateTime
+    typeof skill.start === "string" ? skill.start : skill.start.dateTime;
 
-  let endLabel = typeof skill.end === 'string' ? skill.end : skill.end.label
-  let endDate = typeof skill.end === 'string' ? skill.end : skill.end.dateTime
+  let endLabel = typeof skill.end === "string" ? skill.end : skill.end.label;
+  let endDate = typeof skill.end === "string" ? skill.end : skill.end.dateTime;
 
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={skill.logo} alt="" className="h-6 w-6 object-scale-down" unoptimized />
+        <Image
+          src={skill.logo}
+          alt=""
+          className="h-6 w-6 object-scale-down"
+          unoptimized
+        />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Skill</dt>
@@ -260,14 +272,13 @@ function Skill({ skill }: { skill: Skill }) {
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
           aria-label={`${startLabel} until ${endLabel}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>
-          {' '}
-          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={startDate}>{startLabel}</time>{" "}
+          <span aria-hidden="true">—</span>{" "}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
     </li>
-  )
+  );
 }
 
 function Skills() {
@@ -277,7 +288,7 @@ function Skills() {
       logo: logoPython,
       start: "1998",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -286,7 +297,7 @@ function Skills() {
       logo: logoJS,
       start: "2009",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -295,7 +306,7 @@ function Skills() {
       logo: logoTS,
       start: "2021",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -310,7 +321,7 @@ function Skills() {
       logo: logoFastAPI,
       start: "2021",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -319,7 +330,7 @@ function Skills() {
       logo: logoVue,
       start: "2021",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -328,7 +339,7 @@ function Skills() {
       logo: logoAws,
       start: "2009",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -337,7 +348,7 @@ function Skills() {
       logo: logoKubernetes,
       start: "2020",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
     },
@@ -346,10 +357,10 @@ function Skills() {
       logo: logoPostgres,
       start: "2015",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
-    }
+    },
   ];
 
   return (
@@ -361,41 +372,49 @@ function Skills() {
       <ol className="mt-6 space-y-4">
         {skills.map((skill, skillIndex) => (
           <Skill key={skillIndex} skill={skill} />
-      ))}
+        ))}
       </ol>
     </div>
-  )
+  );
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = [
+    "rotate-2",
+    "-rotate-2",
+    "rotate-2",
+    "rotate-2",
+    "-rotate-2",
+  ];
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[imgDesk, imgLake,  imgRunning, imgDog, imgShuttle].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
+        {[imgDesk, imgLake, imgRunning, imgDog, imgShuttle].map(
+          (image, imageIndex) => (
+            <div
+              key={image.src}
+              className={clsx(
+                "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800",
+                rotations[imageIndex % rotations.length],
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          ),
+        )}
       </div>
     </div>
-  )
+  );
 }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+  let articles = (await getAllArticles()).slice(0, 4);
 
   return (
     <>
@@ -405,9 +424,9 @@ export default async function Home() {
             Software developer, founder, endurance runner, dog lover.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Paul, a full-stack software developer and tech leader
-            from Washington State. I&apos;ve been building cloud-based web applications
-            and CI/CD infrastructures for over 10 years.
+            I’m Paul, a full-stack software developer and tech leader from
+            Washington State. I&apos;ve been building cloud-based web
+            applications and CI/CD infrastructures for over 10 years.
           </p>
           <div className="mt-6 flex gap-6">
             {/*
@@ -445,5 +464,5 @@ export default async function Home() {
         </div>
       </Container>
     </>
-  )
+  );
 }
