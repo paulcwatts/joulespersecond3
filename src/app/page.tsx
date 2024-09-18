@@ -120,8 +120,8 @@ function Resume() {
       company: "Nasdaq",
       title: "Lead Project Manager",
       logo: logoNasdaq,
-      start: "2021",
-      end: "2019",
+      start: "2019",
+      end: "2021",
     },
     {
       company: "UIT Investing (Acquired by Nasdaq)",
