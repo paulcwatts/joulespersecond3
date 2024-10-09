@@ -16,9 +16,9 @@ import logoTurbopatent from "@/images/logos/turbopatent.png";
 import logoUit from "@/images/logos/uit.jpg";
 import logoVue from "@/images/logos/vue.svg";
 import imgDog from "@/images/photos/archer.jpg";
-import imgDesk from "@/images/photos/desk.jpg";
 import imgLake from "@/images/photos/lake.jpg";
 import imgRunning from "@/images/photos/running.jpg";
+import imgRunning2 from "@/images/photos/running2.jpg";
 import imgShuttle from "@/images/photos/shuttle.jpg";
 import { type ArticleWithSlug, getAllArticles } from "@/lib/articles";
 import { formatDate } from "@/lib/formatDate";
@@ -316,7 +316,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[imgDesk, imgLake, imgRunning, imgDog, imgShuttle].map(
+        {[imgRunning, imgLake, imgRunning2, imgDog, imgShuttle].map(
           (image, imageIndex) => (
             <div
               key={image.src}
