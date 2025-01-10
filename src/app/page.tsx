@@ -151,7 +151,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="/resume.pdf"
+        href="/Paul_Watts_Resume.pdf"
         variant="secondary"
         className="group mt-6 w-full"
       >
