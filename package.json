@@ -39,9 +39,9 @@
     "@eslint/js": "^9.38.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "sharp": "0.33.1"
   },
   "pnpm": {
